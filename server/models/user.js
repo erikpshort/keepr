@@ -5,10 +5,15 @@ let bcrypt = require('bcryptjs')
 const SALT_FACTOR = 10
 
 let schema = new Schema({
-  name: { type: String, required: true },
+  firstName: { type: String, required: true },
+  lastName: { type: String, required: true },
+  userName: { type: String, required: true, unique: true },
   email: { type: String, required: true, unique: true, dropDups: true },
   password: { type: String, required: true },
-  created: { type: Number, required: true, default: Date.now() }
+  createdDate: {type: String, required: true, default: new Date()},
+  created: { type: Number, required: true, default: Date.now() },
+  admin: {type: Boolean, required: true, default: false},
+  superUser: {type: Boolean, required: true, default: false}
 })
 
 

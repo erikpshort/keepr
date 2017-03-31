@@ -1,21 +1,27 @@
 <template>
   <div class="hello">
-    <h1>Welcome to Keepr</h1>
-    <p>Get Started</p>
+    <h1 v-show="!authenticated">Welcome to Decks</h1>
+    <p v-show="!authenticated">Get Started</p>
     <ul>
-      <li><router-link to="login">Login</router-link></li>
-      <li><router-link to="register">Register</router-link></li>
+      <li v-show="!authenticated"><router-link to="login">Login</router-link></li>
+      <li v-show="!authenticated"><router-link to="register">Register</router-link></li>
     </ul>
-    <hr>
+    <hr v-show="!authenticated">
+    <mainPage v-show="authenticated"></mainPage>
   </div>
 </template>
 
 <script>
+  import mainPage from './MainPage'
 export default {
   name: 'hello',
-  data () {
-    return {
-
+  components: {mainPage},
+  mounted(){
+    this.$root.store.actions.authenticate()
+  },
+  computed: {
+    authenticated(){
+      return this.$root.store.state.authenticated
     }
   }
 }

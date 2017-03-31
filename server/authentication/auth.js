@@ -32,7 +32,7 @@ router.post('/login', (req, res) => {
           user.password = null
           delete user.password
           res.send({
-            message: 'successfully logged in',
+            message: 'Successfully logged in',
             data: user
           })
         })
@@ -44,6 +44,35 @@ router.post('/login', (req, res) => {
       res.send({
         error: err,
         message: 'Invalid Email or Password'
+      })
+    })
+})
+
+router.post('/logun', (req, res) => {
+  Users.findOne({ userName: req.body.userName })
+    .then(user => {
+      user.validatePassword(req.body.password)
+        .then(valid => {
+          if(!valid){
+            return res.send({error: 'Invalid User Name or Password'})
+          }
+          req.session.uid = user._id;
+          req.session.save()
+          user.password = null
+          delete user.password
+          res.send({
+            message: 'Successfully logged in',
+            data: user
+          })
+        })
+        .catch(err => {
+          res.send({ error: err || 'Invalid User Name or Password' })
+        })
+    })
+    .catch(err => {
+      res.send({
+        error: err,
+        message: 'Invalid User Name or Password'
       })
     })
 })

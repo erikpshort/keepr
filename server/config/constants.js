@@ -10,8 +10,16 @@ const models = {
   user: {
     name: 'User',
     endpoint: 'users',
+    useCustomRoutes: true,
     preventDefaultApi: true,
-    useCustomRoutes: true
+  },
+  card: {
+    name: 'Card',
+    endpoint: 'cards'
+  },
+    deck: {
+    name: 'Deck',
+    endpoint: 'decks'
   }
 }
 
