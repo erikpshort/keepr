@@ -2,12 +2,13 @@ import axios from 'axios'
 import router from '../router'
 
 let ax = axios.create({
-  baseURL: 'http://localhost:3000/',
+  baseURL: 'https://keepr-decks.herokuapp.com/',
+  
   timeout: 4000,
   withCredentials: true
 })
 let api = axios.create({
-  baseURL: 'http://localhost:3000/api/',
+  baseURL: 'https://keepr-decks.herokuapp.com/api/',
   timeout: 4000,
   withCredentials: true
 })
