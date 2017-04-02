@@ -1,5 +1,10 @@
 <template>
     <v-container>
+        <br>
+        <br>
+        <h4>First Time! Just fill it out and have Decks in no time!</h4>
+        <br>
+        <br>
         <v-card class="secondary">
             <v-card-text>
                 <form @submit.prevent="register()">
@@ -24,13 +29,13 @@
                         </v-row>
                         <v-row>>
                             <v-col xs8 offset-xs2>
-                                <v-text-field v-model="password" label="Enter your password" hint="At least 8 characters" min="8" append-icon="remove_red_eye"
+                                <v-text-field v-model="password" label="Enter your password" hint="At least 8 characters" min="8" append-icon="visibility_off"
                                     counter type="password" dark required></v-text-field>
                             </v-col>
                         </v-row>
                         <v-row>
                             <v-col xs8 offset-xs2>
-                                <v-text-field v-model="checkPassword" label="Enter your password" hint="At least 8 characters" min="8" append-icon="remove_red_eye"
+                                <v-text-field v-model="checkPassword" label="Confirm your password" hint="At least 8 characters" min="8" append-icon="visibility_off"
                                     counter v-bind:rules="[pwcheck()]" type="password" dark required></v-text-field>
                             </v-col>
                         </v-row>

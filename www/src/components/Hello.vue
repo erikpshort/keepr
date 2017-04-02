@@ -1,11 +1,15 @@
 <template>
   <div class="hello">
-    <h1 v-show="!authenticated">Welcome to Decks</h1>
-    <p v-show="!authenticated">Get Started</p>
+    <img src="../assets/decklogo.png" alt="">
+    <br>
+    <br>
+    <h4 class="blue-text" v-show="!authenticated">Get Started</h4>
+    <br>
     <ul>
-      <li v-show="!authenticated"><router-link to="login">Login</router-link></li>
-      <li v-show="!authenticated"><router-link to="register">Register</router-link></li>
+      <li v-show="!authenticated"><router-link class="blue-text size-up" to="login">Login</router-link></li>
+      <li v-show="!authenticated"><router-link class="blue-text size-up" to="register">Register</router-link></li>
     </ul>
+    <br>
     <hr v-show="!authenticated">
     <mainPage v-show="authenticated"></mainPage>
   </div>
@@ -42,8 +46,13 @@ li {
   display: inline-block;
   margin: 0 10px;
 }
+.blue-text{
+  color: #183a56;
+  
+}
 
-a {
-  color: #42b983;
+.size-up{
+  font-size: 32px;
+  text-decoration: none
 }
 </style>

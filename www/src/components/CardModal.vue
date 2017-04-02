@@ -52,6 +52,9 @@
                 wrapper: false
             }
         },
+        mounted() {
+            this.$root.store.actions.getDecks()
+        },
         computed: {
             user() {
                 return this.$root.store.state.user
@@ -61,17 +64,7 @@
             },
             decks() {
                 return (this.$root.store.state.decks.filter(deck => {
-                    return deck.cardId.some((cardId) => {
-                        if (deck.userId === this.$root.store.state.user._id) {
-                            if (cardId === this.$root.store.state.currentCard._id) {
-                                return false
-                            } else {
-                                return true
-                            }
-                        } else {
-                            return false
-                        }
-                    })
+                 return deck.userId === this.$root.store.state.user._id
                 }))
             },
         },
@@ -135,12 +128,10 @@
         transition: all .3s ease;
         font-family: Helvetica, Arial, sans-serif;
     }
-
     
     .modal-body {
         margin: 20px 0;
     }
-
     
     .modal-enter {
         opacity: 0;

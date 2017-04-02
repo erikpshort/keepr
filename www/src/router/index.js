@@ -5,6 +5,7 @@ import Login from '@/components/Login'
 import Register from '@/components/Register'
 import MainPage from '@/components/MainPage'
 import Dashboard from '@/components/Dashboard'
+import Credits from '@/components/Credits'
 
 Vue.use(Router)
 
@@ -34,6 +35,10 @@ export default new Router({
       path: '/dashboard',
       name: 'Dashboard',
       component: Dashboard
+    },{
+      path: '/credits',
+      name: 'Credits',
+      component: Credits
     }
   ]
 })

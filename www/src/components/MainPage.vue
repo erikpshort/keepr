@@ -39,7 +39,9 @@
         },
         computed: {
             cards() {
-                return this.$root.store.state.cards
+                return this.$root.store.state.cards.sort((a,b) => {
+                    return b.created - a.created
+                })
             },
             registerMsg() {
                 return this.$root.store.state.registerMsg
@@ -49,7 +51,7 @@
             showCardModalMethod(card) {
                 this.$root.store.state.currentCard = card
                 this.showCardModal = true
-            }
+            },
         }
     }
 

@@ -1,7 +1,7 @@
 <template>
     <transition name="modal">
         <div class="modal-mask">
-            <div class="modal-wrapper">
+            <div class="modal-wrapper"@click.self="$parent.$parent.showAddDeckModal=false">
                 <div class="modal-container">
                     <v-card class="teal darken-4">
                         <v-card-text>

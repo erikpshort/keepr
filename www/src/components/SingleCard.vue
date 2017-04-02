@@ -56,8 +56,14 @@
                 // this.$parent.showDeckModal = true
             },
             showDeckCardModalMethod(card) {
-                this.$root.store.state.activeDeck = card
-                this.$parent.showDeckModal = true
+                if (Array.isArray(card.cardId)) {
+                    this.$root.store.state.activeDeck = card
+                    this.$parent.showDeckModal = true
+                } else {
+                    console.log('here')
+                        this.$root.store.state.currentCard = card
+                        this.$parent.showCardModal = true
+                }
 
             }
         }

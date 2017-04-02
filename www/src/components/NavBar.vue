@@ -2,31 +2,31 @@
     <v-toolbar class="orange accent-4 ">
         <v-toolbar-items>
             <v-toolbar-item v-show="!authenticated">
-                <a  class="white--text zzz" @click="login()">Login</a>
+                <a  class=" zzz" @click="login()">Login</a>
             </v-toolbar-item>
             <v-toolbar-item v-show="!authenticated">
-                <a  class="white--text zzz" @click="register()">Register</a>
+                <a  class=" zzz" @click="register()">Register</a>
             </v-toolbar-item>
             <v-toolbar-item v-show="authenticated">
-                <a class="white--text zzz" @click="logout()">Logout</a>
+                <a class=" zzz" @click="logout()">Logout</a>
             </v-toolbar-item>
         </v-toolbar-items>
         <v-toolbar-title>
-            <img width="50px" height="50px" src="../assets/logo.jpg" @click="goHome()">
+            <img height="50px" src="../assets/decklogo.png" @click="goHome()">
         </v-toolbar-title>
         <v-toolbar-items>
             <v-toolbar-item>
-                <a @click="showAddCardModal=!showAddCardModal" class="white--text zzz">
+                <a v-show="authenticated" @click="showAddCardModal=!showAddCardModal" class=" zzz">
                     Add a Card
                     </a>
             </v-toolbar-item>
             <v-toolbar-item>
-                <a @click="showAddDeckModal=!showAddDeckModal" class="white--text zzz">
+                <a v-show="authenticated" @click="showAddDeckModal=!showAddDeckModal" class=" zzz">
                     Add a Deck
                     </a>
             </v-toolbar-item>
             <v-toolbar-item>
-                <h4 v-show="authenticated" @click="goDashboard()" class="white--text zzz">
+                <h4 v-show="authenticated" @click="goDashboard()" class=" zzz">
                     Hello, {{user.firstName}}
                 </h4>
             </v-toolbar-item>
@@ -88,5 +88,6 @@
         align-content: center;
         align-items: center;
         z-index: 9999;
+        color: #183a56;
     }
 </style>

@@ -2,7 +2,6 @@
   <div id="app">
     <navBar class="navBar"></navBar>
     <br>
-    {{err}}
     <router-view></router-view>
   </div>
 </template>

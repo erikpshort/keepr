@@ -29,7 +29,7 @@
         computed: {
             deckCards() {
                 return this.$root.store.state.cards.filter(card => {
-                    return this.$root.store.state.activeDeck.cardId.some(function (cardId) {
+                    return this.$root.store.state.activeDeck.cardId.some((cardId) => {
                         return cardId == card._id
                     })
                 })

@@ -85,7 +85,7 @@ export default {
       },
       logout() {
         ax.delete('logout').then(res => {
-          this.authenticate()
+            location.reload()
         }).catch(handleError)
       },
       addCard(body) {

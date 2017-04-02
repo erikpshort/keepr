@@ -1,6 +1,13 @@
 <template>
     <v-container>
-        <h1>{{test}}</h1>
+        <br>
+        <br>
+        <h3>{{test}}</h3>
+        <br>
+        <br>
+        <br>
+        <br>
+
         <v-card class="secondary bigger">
             <v-card-text>
                 <form @submit.prevent="logIn()">
@@ -33,7 +40,7 @@
         name: 'Login',
         data() {
             return {
-                test: 'Hello',
+                test: 'Glad to see you again!',
                 name: '',
                 password: '',
                 timeout: 3000,
